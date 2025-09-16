@@ -42,6 +42,31 @@ void searchByName(const vector<Student>& database) {
     }
 }
 
+// Функция для поиска студентов по специальности
+void searchByMajor(const vector<Student>& database) {
+    string searchMajor;
+    cout << "Введите специальность для поиска: ";
+    cin >> searchMajor;
+    
+    string lowerSearchMajor = toLower(searchMajor);
+    bool found = false;
+    
+    cout << "Результаты поиска:\n";
+    for (const Student& student : database) {
+        if (toLower(student.major) == lowerSearchMajor) {
+            cout << "Имя: " << student.name << "\n";
+            cout << "Возраст: " << student.age << "\n";
+            cout << "Специальность: " << student.major << "\n";
+            cout << "Средний балл: " << student.gpa << "\n\n";
+            found = true;
+        }
+    }
+    
+    if (!found) {
+        cout << "Студенты со специальностью '" << searchMajor << "' не найдены.\n";
+    }
+}
+
 // Функция для добавления студента в базу данных
 void addStudent(vector<Student>& database) {
     Student student;
