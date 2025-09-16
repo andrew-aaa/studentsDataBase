@@ -103,6 +103,7 @@ int main() {
         cout << "1. Добавить студента\n";
         cout << "2. Вывести список студентов\n";
         cout << "3. Поиск по имени\n";
+        cout << "4. Поиск по специальности\n";
         cout << "0. Выход\n";
         cout << "Выберите действие: ";
         cin >> choice;
@@ -116,6 +117,9 @@ int main() {
                 break;
             case 3:
                 searchByName(database);
+                break;
+            case 4:
+                searchByMajor(database);
                 break;
             case 0:
                 cout << "Выход из программы.\n";
