@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,6 +11,36 @@ struct Student {
     string major;
     double gpa;
 };
+
+string toLower(const string& str) {
+    string result = str;
+    transform(result.begin(), result.end(), result.begin(), ::tolower);
+    return result;
+}
+
+void searchByName(const vector<Student>& database) {
+        std::string searchName;
+    std::cout << "Введите имя для поиска: ";
+    std::cin >> searchName;
+    
+    std::string lowerSearchName = toLower(searchName);
+    bool found = false;
+    
+    std::cout << "Результаты поиска:\n";
+    for (const Student& student : database) {
+        if (toLower(student.name) == lowerSearchName) {
+            cout << "Имя: " << student.name << "\n";
+            cout << "Возраст: " << student.age << "\n";
+            cout << "Специальность: " << student.major << "\n";
+            cout << "Средний балл: " << student.gpa << "\n\n";
+            found = true;
+        }
+    }
+    
+    if (!found) {
+        cout << "Студенты с именем '" << searchName << "' не найдены.\n";
+    }
+}
 
 // Функция для добавления студента в базу данных
 void addStudent(vector<Student>& database) {
@@ -46,6 +77,7 @@ int main() {
         cout << "Меню:\n";
         cout << "1. Добавить студента\n";
         cout << "2. Вывести список студентов\n";
+        cout << "3. Поиск по имени\n";
         cout << "0. Выход\n";
         cout << "Выберите действие: ";
         cin >> choice;
@@ -56,6 +88,9 @@ int main() {
                 break;
             case 2:
                 displayStudents(database);
+                break;
+            case 3:
+                searchByName(database);
                 break;
             case 0:
                 cout << "Выход из программы.\n";
