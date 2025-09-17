@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Parall/studentsDataBase/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

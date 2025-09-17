@@ -1,0 +1,4 @@
+C:/Parall/studentsDataBase/build/CMakeFiles/program.dir
+C:/Parall/studentsDataBase/build/CMakeFiles/test_program.dir
+C:/Parall/studentsDataBase/build/CMakeFiles/edit_cache.dir
+C:/Parall/studentsDataBase/build/CMakeFiles/rebuild_cache.dir
