@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 // Тест для функции toLower
 TEST(StudentTest, ToLowerTest) {
     EXPECT_EQ(toLower("HELLO"), "hello");
